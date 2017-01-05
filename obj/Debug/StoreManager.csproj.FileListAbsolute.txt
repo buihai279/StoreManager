@@ -6,3 +6,15 @@ C:\Users\HaiPC\Documents\GitHub\Assignments_Large\StoreManager\StoreManager\obj\
 C:\Users\HaiPC\Documents\GitHub\Assignments_Large\StoreManager\StoreManager\obj\Debug\StoreManager.csproj.GenerateResource.Cache
 C:\Users\HaiPC\Documents\GitHub\Assignments_Large\StoreManager\StoreManager\obj\Debug\StoreManager.exe
 C:\Users\HaiPC\Documents\GitHub\Assignments_Large\StoreManager\StoreManager\obj\Debug\StoreManager.pdb
+C:\Users\HaiPC\Documents\GitHub\StoreManager\obj\Debug\StoreManager.exe
+C:\Users\HaiPC\Documents\GitHub\StoreManager\obj\Debug\StoreManager.pdb
+C:\Users\HaiPC\Documents\GitHub\StoreManager\bin\Debug\StoreManager.exe
+C:\Users\HaiPC\Documents\GitHub\StoreManager\bin\Debug\StoreManager.pdb
+C:\Users\HaiPC\Documents\GitHub\StoreManager\obj\Debug\StoreManager.csprojResolveAssemblyReference.cache
+C:\Users\HaiPC\Documents\GitHub\StoreManager\obj\Debug\StoreManager.Properties.Resources.resources
+C:\Users\HaiPC\Documents\GitHub\StoreManager\obj\Debug\StoreManager.csproj.GenerateResource.Cache
+C:\Users\HaiPC\Documents\GitHub\StoreManager\obj\Debug\StoreManager.fLogin.resources
+C:\Users\HaiPC\Documents\GitHub\StoreManager\obj\Debug\StoreManager.fManager.resources
+C:\Users\HaiPC\Documents\GitHub\StoreManager\obj\Debug\StoreManager.fInfo.resources
+C:\Users\HaiPC\Documents\GitHub\StoreManager\obj\Debug\StoreManager.fSell.resources
+C:\Users\HaiPC\Documents\GitHub\StoreManager\obj\Debug\StoreManager.fManagerProduct.resources
