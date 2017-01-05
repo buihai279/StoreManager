@@ -11,6 +11,7 @@ namespace StoreManager
 {
     public partial class fManager : Form
     {
+        public string mail = "";
         public fManager()
         {
             InitializeComponent();
@@ -23,7 +24,7 @@ namespace StoreManager
 
         private void tsmi_ChangePassword_Click(object sender, EventArgs e)
         {
-            fInfo fInfo = new fInfo();
+            fInfo fInfo = new fInfo(mail);
             this.Hide();
             fInfo.ShowDialog();
             this.Show();

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StoreManager.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,7 +17,6 @@ namespace StoreManager
         public fManagerProduct()
         {
             InitializeComponent();
-            LoadAccoutList();
         }
 
         private void btnUpload_Click(object sender, EventArgs e)
@@ -24,15 +24,14 @@ namespace StoreManager
             OpenFileDialog ofd = new OpenFileDialog();
             ofdImage.ShowDialog();
         }
-
+        /*
         void LoadAccoutList()
         {
             DataProvider provider = new DataProvider();
             string query = "spCheckPassword";
             dgvListProduct.DataSource = provider.ExcuteNonQuery(query, new object[] { "UserName", "Password" }, new object[] { "UserName", "Password" });
             int i=provider.ExcuteNonQuery(query, new object[] { "UserName", "Password" }, new object[] { "admin", "123456" });
-
             MessageBox.Show(i.ToString());
-        }
+        }*/
     }
 }

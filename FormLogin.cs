@@ -18,11 +18,28 @@ namespace StoreManager
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            fManager fm = new fManager();
-            this.Hide();
-            fm.ShowDialog();
-            this.Show();
+            string mail = txtUserName.Text;
+            string passWord = txtPassword.Text;
+            if (Login(mail, passWord))
+            {
+                UserDAO userDao = new UserDAO();
+                fInfo fi = new fInfo(mail);
+                fManager fm = new fManager();
+                this.Hide();
+                fm.ShowDialog();
+                this.Show();
+            }
+            else
+            {
+                MessageBox.Show("Sai tên tài khoản hoặc mật khẩu!");
+            }
         }
+        bool Login(string userName, string passWord)
+        {
+            UserDAO user = new UserDAO();
+            return user.Login(userName, passWord);
+        }
+
 
         private void btnExit_Click(object sender, EventArgs e)
         {
@@ -36,6 +53,14 @@ namespace StoreManager
             {
                 e.Cancel = true;
             }
+        }
+
+        private void llblForgotPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            fForgotPassword form = new fForgotPassword();
+            this.Hide();
+            form.ShowDialog();
+            this.Show();
         }
 
 

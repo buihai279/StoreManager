@@ -7,16 +7,15 @@ using System.Text;
 
 using System.Data;
 using System.Data.SqlClient;
-namespace StoreManager
+namespace StoreManager.DAO
 {
     public class DataProvider
     {
-
-        private SqlConnection sqlCn = null;
+        private static SqlConnection sqlCn = null;
         private string strConnection = @"Data Source=.\SQLEXPRESS;Initial Catalog=Shop;Integrated Security=True";
 
         private DataTable dt = new DataTable();
-        public void OpenConnection(string strconnect)
+        public static void OpenConnection(string strconnect)
         {
             sqlCn = new SqlConnection();
             sqlCn.ConnectionString = strconnect;
@@ -26,61 +25,32 @@ namespace StoreManager
         {
             sqlCn.Close();
         }
-        public DataTable ExcuteQuery(string query, object[] parameterNames  = null, object[] parameterValues = null)
+        public DataTable ExcuteQuery(string query)
         {
             OpenConnection(strConnection);
             SqlCommand cmd = new SqlCommand(query, sqlCn);
-            if (parameterNames != null && parameterValues != null && parameterNames.Length==parameterValues.Length)
-            {
-                cmd.CommandType = CommandType.StoredProcedure;
-                int i = 0;
-                foreach (string item in parameterNames )
-                {
-                    cmd.Parameters.AddWithValue(item, parameterValues[i]);
-                    i++;
-                }
-            }
+            
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             adapter.Fill(dt);
             CloseConnection();
             return dt;
         }
-        public int ExcuteNonQuery(string query, object[] parameterNames  = null, object[] parameterValues = null)
+        public int ExcuteNonQuery(string query)
         {
-            int dt = 0;
+            int rowcount = 0;
             OpenConnection(strConnection);
             SqlCommand cmd = new SqlCommand(query, sqlCn);
-            if (parameterNames != null && parameterValues != null && parameterNames.Length == parameterValues.Length)
-            {
-                cmd.CommandType = CommandType.StoredProcedure;
-                int i = 0;
-                foreach (string item in parameterNames)
-                {
-                    cmd.Parameters.AddWithValue(item, parameterValues[i]);
-                    i++;
-                }
-            }
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-            dt = cmd.ExecuteNonQuery();
+            rowcount = cmd.ExecuteNonQuery();
             CloseConnection();
-            return dt;
+            return rowcount;
         }
 
-        public object ExcuteScalar(string query, object[] parameterNames = null, object[] parameterValues = null)
+        public object ExcuteScalar(string query)
         {
             object dt = 0;
             OpenConnection(strConnection);
             SqlCommand cmd = new SqlCommand(query, sqlCn);
-            if (parameterNames != null && parameterValues != null && parameterNames.Length == parameterValues.Length)
-            {
-                cmd.CommandType = CommandType.StoredProcedure;
-                int i = 0;
-                foreach (string item in parameterNames)
-                {
-                    cmd.Parameters.AddWithValue(item, parameterValues[i]);
-                    i++;
-                }
-            }
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             dt = cmd.ExecuteScalar();
             CloseConnection();

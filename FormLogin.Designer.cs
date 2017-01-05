@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.llblForgotPassword = new System.Windows.Forms.LinkLabel();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
             this.txtPassword = new System.Windows.Forms.TextBox();
@@ -40,6 +41,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.llblForgotPassword);
             this.panel1.Controls.Add(this.btnExit);
             this.panel1.Controls.Add(this.btnLogin);
             this.panel1.Controls.Add(this.txtPassword);
@@ -51,12 +53,23 @@
             this.panel1.Size = new System.Drawing.Size(396, 223);
             this.panel1.TabIndex = 0;
             // 
+            // llblForgotPassword
+            // 
+            this.llblForgotPassword.AutoSize = true;
+            this.llblForgotPassword.Location = new System.Drawing.Point(199, 209);
+            this.llblForgotPassword.Name = "llblForgotPassword";
+            this.llblForgotPassword.Size = new System.Drawing.Size(89, 13);
+            this.llblForgotPassword.TabIndex = 5;
+            this.llblForgotPassword.TabStop = true;
+            this.llblForgotPassword.Text = "Quên mật khẩu ?";
+            this.llblForgotPassword.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblForgotPassword_LinkClicked);
+            // 
             // btnExit
             // 
             this.btnExit.Location = new System.Drawing.Point(278, 146);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 23);
-            this.btnExit.TabIndex = 2;
+            this.btnExit.TabIndex = 4;
             this.btnExit.Text = "Thoát";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
@@ -66,7 +79,7 @@
             this.btnLogin.Location = new System.Drawing.Point(121, 146);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(75, 23);
-            this.btnLogin.TabIndex = 2;
+            this.btnLogin.TabIndex = 3;
             this.btnLogin.Text = "Đăng nhập";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
@@ -76,7 +89,8 @@
             this.txtPassword.Location = new System.Drawing.Point(121, 81);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(252, 20);
-            this.txtPassword.TabIndex = 1;
+            this.txtPassword.TabIndex = 2;
+            this.txtPassword.Text = "654321";
             this.txtPassword.UseSystemPasswordChar = true;
             // 
             // lblPassword
@@ -95,6 +109,7 @@
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(252, 20);
             this.txtUserName.TabIndex = 1;
+            this.txtUserName.Text = "admin";
             // 
             // lblUserName
             // 
@@ -131,6 +146,7 @@
         private System.Windows.Forms.Label lblUserName;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.LinkLabel llblForgotPassword;
 
     }
 }
