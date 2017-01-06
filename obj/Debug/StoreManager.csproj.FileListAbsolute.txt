@@ -17,5 +17,5 @@ C:\Users\HaiPC\Documents\GitHub\StoreManager\obj\Debug\StoreManager.fLogin.resou
 C:\Users\HaiPC\Documents\GitHub\StoreManager\obj\Debug\StoreManager.fManager.resources
 C:\Users\HaiPC\Documents\GitHub\StoreManager\obj\Debug\StoreManager.fInfo.resources
 C:\Users\HaiPC\Documents\GitHub\StoreManager\obj\Debug\StoreManager.fSell.resources
-C:\Users\HaiPC\Documents\GitHub\StoreManager\obj\Debug\StoreManager.fManagerProduct.resources
 C:\Users\HaiPC\Documents\GitHub\StoreManager\obj\Debug\StoreManager.fForgotPassword.resources
+C:\Users\HaiPC\Documents\GitHub\StoreManager\obj\Debug\StoreManager.fControl.resources

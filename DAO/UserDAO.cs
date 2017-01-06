@@ -10,30 +10,37 @@ namespace StoreManager
 {
     class UserDAO
     {
-        private static DataProvider provider = new DataProvider();
-        private DataTable dt;
         private string query="";
+        private DataTable dt;
         public bool Login(string userName, string passWord)
         {
             query = "exec spCheckPassword @UserName='" + userName + "', @Password='" + passWord + "'";
 
-            dt = provider.ExcuteQuery(query);
+            dt = DataProvider.ExcuteQuery(query);
 
             return dt.Rows.Count > 0;
         }
 
-        public bool ChangePassword(string emailAdress, string passWord, string newPassWord, string phone, string fullname)
+        public bool ChangePassword(string emailAdress, string passWord, string newPassWord, int phone, string fullname)
         {
-            query = "exec spChangePassword @email='" + emailAdress + "', @password='" + passWord + "', @newpassword='" + newPassWord + "', @phone='" + phone + "', @fullname='" + fullname + "'";
+            query = "exec spChangePassword @email='" + emailAdress + "', @password='" + passWord + "', @newpassword='" + newPassWord + "', @phone='" + phone + "', @fullname=N'" + fullname + "'";
 
-            int result = provider.ExcuteNonQuery(query);
+            int result = DataProvider.ExcuteNonQuery(query);
             return result > 0;
         }
         public DataTable GetInfoAccount(string emailAdress)
         {
             query = "EXEC dbo.spGetAccountByMail @mail =N'"+emailAdress+"'";
 
-            dt = provider.ExcuteQuery(query);
+            dt = DataProvider.ExcuteQuery(query);
+
+            return dt;
+        }
+        public DataTable GetAllUser()
+        {
+            query = "SELECT DISTINCT * FROM v_GetAllUser";
+
+            dt = DataProvider.ExcuteQuery(query);
 
             return dt;
         }

@@ -1,12 +1,24 @@
-﻿using System;
+﻿using StoreManager.DAO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace StoreManager.DAO
+using System.Data;
+using System.Data.SqlClient;
+namespace StoreManager
 {
     class ProductDAO
     {
-        private int quality;
+        private DataTable dt;
+        private string query = "";
+        public DataTable GetAllProduct()
+        {
+            query = "SELECT * FROM v_GetAllProducts";
+
+            dt = DataProvider.ExcuteQuery(query);
+
+            return dt;
+        }
     }
 }

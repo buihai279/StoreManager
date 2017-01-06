@@ -90,7 +90,7 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(252, 20);
             this.txtPassword.TabIndex = 2;
-            this.txtPassword.Text = "654321";
+            this.txtPassword.Text = "123456";
             this.txtPassword.UseSystemPasswordChar = true;
             // 
             // lblPassword

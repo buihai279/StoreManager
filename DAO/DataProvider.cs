@@ -9,33 +9,32 @@ using System.Data;
 using System.Data.SqlClient;
 namespace StoreManager.DAO
 {
-    public class DataProvider
+    public static class DataProvider
     {
         private static SqlConnection sqlCn = null;
-        private string strConnection = @"Data Source=.\SQLEXPRESS;Initial Catalog=Shop;Integrated Security=True";
+        private static string strConnection = @"Data Source=.\SQLEXPRESS;Initial Catalog=Shop;Integrated Security=True";
 
-        private DataTable dt = new DataTable();
         public static void OpenConnection(string strconnect)
         {
             sqlCn = new SqlConnection();
             sqlCn.ConnectionString = strconnect;
             sqlCn.Open();
         }
-        public void CloseConnection()
+        public static void CloseConnection()
         {
             sqlCn.Close();
         }
-        public DataTable ExcuteQuery(string query)
+        public static DataTable ExcuteQuery(string query)
         {
+            DataTable dt = new DataTable();
             OpenConnection(strConnection);
             SqlCommand cmd = new SqlCommand(query, sqlCn);
-            
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             adapter.Fill(dt);
             CloseConnection();
             return dt;
         }
-        public int ExcuteNonQuery(string query)
+        public static int ExcuteNonQuery(string query)
         {
             int rowcount = 0;
             OpenConnection(strConnection);
@@ -46,7 +45,7 @@ namespace StoreManager.DAO
             return rowcount;
         }
 
-        public object ExcuteScalar(string query)
+        public static object ExcuteScalar(string query)
         {
             object dt = 0;
             OpenConnection(strConnection);

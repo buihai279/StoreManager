@@ -11,6 +11,7 @@ namespace StoreManager
 {
     public partial class fLogin : Form
     {
+        private UserDAO user = new UserDAO();
         public fLogin()
         {
             InitializeComponent();
@@ -24,7 +25,7 @@ namespace StoreManager
             {
                 UserDAO userDao = new UserDAO();
                 fInfo fi = new fInfo(mail);
-                fManager fm = new fManager();
+                fControl fm = new fControl(mail);
                 this.Hide();
                 fm.ShowDialog();
                 this.Show();
@@ -36,7 +37,6 @@ namespace StoreManager
         }
         bool Login(string userName, string passWord)
         {
-            UserDAO user = new UserDAO();
             return user.Login(userName, passWord);
         }
 
