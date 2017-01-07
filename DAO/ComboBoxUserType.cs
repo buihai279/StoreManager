@@ -8,21 +8,17 @@ using System.Data;
 using System.Data.SqlClient;
 namespace StoreManager
 {
-    class ProductDAO
+    class ComboBoxUserType
     {
+        private string query="";
         private DataTable dt;
-        private string query = "";
-        public DataTable GetAllProduct()
+        public DataTable GetAllUserType()
         {
-            query = "SELECT * FROM v_GetAllProducts";
+            query = "SELECT  * FROM rules";
 
             dt = DataProvider.ExcuteQuery(query);
 
             return dt;
-        }
-        public bool DeleteProduct()
-        {
-            return false;
         }
     }
 }

@@ -19,3 +19,4 @@ C:\Users\HaiPC\Documents\GitHub\StoreManager\obj\Debug\StoreManager.fInfo.resour
 C:\Users\HaiPC\Documents\GitHub\StoreManager\obj\Debug\StoreManager.fSell.resources
 C:\Users\HaiPC\Documents\GitHub\StoreManager\obj\Debug\StoreManager.fForgotPassword.resources
 C:\Users\HaiPC\Documents\GitHub\StoreManager\obj\Debug\StoreManager.fControl.resources
+C:\Users\HaiPC\Documents\GitHub\StoreManager\bin\Debug\StoreManager.exe.config
