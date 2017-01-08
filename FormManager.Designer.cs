@@ -37,7 +37,6 @@
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSearchProduct = new System.Windows.Forms.Button();
             this.btnUpdateProduct = new System.Windows.Forms.Button();
-            this.btnPermanentlyDeleted = new System.Windows.Forms.Button();
             this.btnEmpty = new System.Windows.Forms.Button();
             this.lblImageFileName = new System.Windows.Forms.Label();
             this.cbCategory = new System.Windows.Forms.ComboBox();
@@ -50,13 +49,13 @@
             this.lblQuality = new System.Windows.Forms.Label();
             this.lblCategory = new System.Windows.Forms.Label();
             this.lblDescription = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.txtQuantity = new System.Windows.Forms.TextBox();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.txtDescription = new System.Windows.Forms.TextBox();
+            this.txtIdProduct = new System.Windows.Forms.TextBox();
             this.txtNameProduct = new System.Windows.Forms.TextBox();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
             this.tpManagerCategory = new System.Windows.Forms.TabPage();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.dgvCategory = new System.Windows.Forms.DataGridView();
@@ -77,9 +76,6 @@
             this.tpManagerBrand = new System.Windows.Forms.TabPage();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
             this.dgvBrand = new System.Windows.Forms.DataGridView();
-            this.button14 = new System.Windows.Forms.Button();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.button15 = new System.Windows.Forms.Button();
             this.btnDeleteBrand = new System.Windows.Forms.Button();
             this.btnUpdateBrand = new System.Windows.Forms.Button();
             this.btnAddBrandName = new System.Windows.Forms.Button();
@@ -90,42 +86,60 @@
             this.tpManagerUser = new System.Windows.Forms.TabPage();
             this.splitContainer5 = new System.Windows.Forms.SplitContainer();
             this.dgvUser = new System.Windows.Forms.DataGridView();
-            this.button23 = new System.Windows.Forms.Button();
-            this.textBox20 = new System.Windows.Forms.TextBox();
-            this.button24 = new System.Windows.Forms.Button();
-            this.cbAddTypeUser = new System.Windows.Forms.ComboBox();
+            this.txtAddTypeUser = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.txtPhone = new System.Windows.Forms.TextBox();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtAddUser = new System.Windows.Forms.TextBox();
+            this.txtAddPasswordUser = new System.Windows.Forms.TextBox();
+            this.txtAddPhoneUser = new System.Windows.Forms.TextBox();
+            this.txtAddEmailUser = new System.Windows.Forms.TextBox();
+            this.txtAddUserFullName = new System.Windows.Forms.TextBox();
             this.btnDeleteUser = new System.Windows.Forms.Button();
             this.btnAddUser = new System.Windows.Forms.Button();
-            this.btnUpdateUser = new System.Windows.Forms.Button();
             this.label24 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.txtEditTypeUser = new System.Windows.Forms.TextBox();
             this.label28 = new System.Windows.Forms.Label();
             this.txtEditPhone = new System.Windows.Forms.TextBox();
             this.txtEditEmailUser = new System.Windows.Forms.TextBox();
             this.txtEditIdUser = new System.Windows.Forms.TextBox();
             this.txtEditFullName = new System.Windows.Forms.TextBox();
             this.tpOrder = new System.Windows.Forms.TabPage();
+            this.lblOrderId = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.dgvOrder = new System.Windows.Forms.DataGridView();
-            this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.button7 = new System.Windows.Forms.Button();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.dgvAddProduct = new System.Windows.Forms.DataGridView();
+            this.btnAddProduct = new System.Windows.Forms.Button();
+            this.lblAddPathImage = new System.Windows.Forms.Label();
+            this.cbAddCategories = new System.Windows.Forms.ComboBox();
+            this.btnAddImageProduct = new System.Windows.Forms.Button();
+            this.pbAddImageProduct = new System.Windows.Forms.PictureBox();
+            this.cbbAddBrand = new System.Windows.Forms.ComboBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.txtAddQuality = new System.Windows.Forms.TextBox();
+            this.txtAddPrice = new System.Windows.Forms.TextBox();
+            this.txtAddDescription = new System.Windows.Forms.TextBox();
+            this.txtAddProductName = new System.Windows.Forms.TextBox();
             this.pageSetupDialog1 = new System.Windows.Forms.PageSetupDialog();
             this.shopDataSet = new StoreManager.ShopDataSet();
             this.rulesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rulesTableAdapter = new StoreManager.ShopDataSetTableAdapters.rulesTableAdapter();
-            this.txtEditTypeUser = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tcManager.SuspendLayout();
             this.tpManagerProduct.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -156,6 +170,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).BeginInit();
             this.tpOrder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrder)).BeginInit();
+            this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+            this.splitContainer2.Panel1.SuspendLayout();
+            this.splitContainer2.Panel2.SuspendLayout();
+            this.splitContainer2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAddProduct)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAddImageProduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.shopDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rulesBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -171,11 +192,12 @@
             this.tcManager.Controls.Add(this.tpManagerBrand);
             this.tcManager.Controls.Add(this.tpManagerUser);
             this.tcManager.Controls.Add(this.tpOrder);
+            this.tcManager.Controls.Add(this.tabPage1);
             this.tcManager.Location = new System.Drawing.Point(0, 1);
             this.tcManager.Name = "tcManager";
             this.tcManager.SelectedIndex = 0;
             this.tcManager.Size = new System.Drawing.Size(1046, 669);
-            this.tcManager.TabIndex = 0;
+            this.tcManager.TabIndex = 1;
             // 
             // tpManagerProduct
             // 
@@ -203,7 +225,6 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.btnUpdateProduct);
-            this.splitContainer1.Panel2.Controls.Add(this.btnPermanentlyDeleted);
             this.splitContainer1.Panel2.Controls.Add(this.btnEmpty);
             this.splitContainer1.Panel2.Controls.Add(this.lblImageFileName);
             this.splitContainer1.Panel2.Controls.Add(this.cbCategory);
@@ -216,13 +237,13 @@
             this.splitContainer1.Panel2.Controls.Add(this.lblQuality);
             this.splitContainer1.Panel2.Controls.Add(this.lblCategory);
             this.splitContainer1.Panel2.Controls.Add(this.lblDescription);
+            this.splitContainer1.Panel2.Controls.Add(this.label12);
             this.splitContainer1.Panel2.Controls.Add(this.lblName);
             this.splitContainer1.Panel2.Controls.Add(this.txtQuantity);
             this.splitContainer1.Panel2.Controls.Add(this.txtPrice);
             this.splitContainer1.Panel2.Controls.Add(this.txtDescription);
+            this.splitContainer1.Panel2.Controls.Add(this.txtIdProduct);
             this.splitContainer1.Panel2.Controls.Add(this.txtNameProduct);
-            this.splitContainer1.Panel2.Controls.Add(this.btnCancel);
-            this.splitContainer1.Panel2.Controls.Add(this.btnAdd);
             this.splitContainer1.Size = new System.Drawing.Size(1032, 637);
             this.splitContainer1.SplitterDistance = 644;
             this.splitContainer1.TabIndex = 1;
@@ -230,9 +251,9 @@
             // dgvListProduct
             // 
             this.dgvListProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListProduct.Location = new System.Drawing.Point(3, 98);
+            this.dgvListProduct.Location = new System.Drawing.Point(3, 66);
             this.dgvListProduct.Name = "dgvListProduct";
-            this.dgvListProduct.Size = new System.Drawing.Size(611, 494);
+            this.dgvListProduct.Size = new System.Drawing.Size(638, 526);
             this.dgvListProduct.TabIndex = 3;
             // 
             // txtSearch
@@ -250,24 +271,17 @@
             this.btnSearchProduct.TabIndex = 0;
             this.btnSearchProduct.Text = "Tìm kiếm";
             this.btnSearchProduct.UseVisualStyleBackColor = true;
+            this.btnSearchProduct.Click += new System.EventHandler(this.btnSearchProduct_Click);
             // 
             // btnUpdateProduct
             // 
-            this.btnUpdateProduct.Location = new System.Drawing.Point(142, 7);
+            this.btnUpdateProduct.Location = new System.Drawing.Point(105, 7);
             this.btnUpdateProduct.Name = "btnUpdateProduct";
             this.btnUpdateProduct.Size = new System.Drawing.Size(93, 34);
             this.btnUpdateProduct.TabIndex = 10;
             this.btnUpdateProduct.Text = "Cập nhật sản phẩm";
             this.btnUpdateProduct.UseVisualStyleBackColor = true;
-            // 
-            // btnPermanentlyDeleted
-            // 
-            this.btnPermanentlyDeleted.Location = new System.Drawing.Point(289, 13);
-            this.btnPermanentlyDeleted.Name = "btnPermanentlyDeleted";
-            this.btnPermanentlyDeleted.Size = new System.Drawing.Size(91, 23);
-            this.btnPermanentlyDeleted.TabIndex = 2;
-            this.btnPermanentlyDeleted.Text = "Xóa vĩnh viễn";
-            this.btnPermanentlyDeleted.UseVisualStyleBackColor = true;
+            this.btnUpdateProduct.Click += new System.EventHandler(this.btnUpdateProduct_Click);
             // 
             // btnEmpty
             // 
@@ -277,6 +291,7 @@
             this.btnEmpty.TabIndex = 2;
             this.btnEmpty.Text = "Xóa";
             this.btnEmpty.UseVisualStyleBackColor = true;
+            this.btnEmpty.Click += new System.EventHandler(this.btnEmpty_Click);
             // 
             // lblImageFileName
             // 
@@ -376,10 +391,19 @@
             this.lblDescription.TabIndex = 3;
             this.lblDescription.Text = "Thông tin sản phẩm";
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(22, 67);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(65, 13);
+            this.label12.TabIndex = 2;
+            this.label12.Text = "Id sản phẩm";
+            // 
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(22, 74);
+            this.lblName.Location = new System.Drawing.Point(22, 92);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(75, 13);
             this.lblName.TabIndex = 2;
@@ -407,32 +431,22 @@
             this.txtDescription.Size = new System.Drawing.Size(202, 91);
             this.txtDescription.TabIndex = 1;
             // 
+            // txtIdProduct
+            // 
+            this.txtIdProduct.Location = new System.Drawing.Point(153, 67);
+            this.txtIdProduct.Multiline = true;
+            this.txtIdProduct.Name = "txtIdProduct";
+            this.txtIdProduct.ReadOnly = true;
+            this.txtIdProduct.Size = new System.Drawing.Size(202, 19);
+            this.txtIdProduct.TabIndex = 1;
+            // 
             // txtNameProduct
             // 
-            this.txtNameProduct.Location = new System.Drawing.Point(153, 74);
+            this.txtNameProduct.Location = new System.Drawing.Point(153, 92);
             this.txtNameProduct.Multiline = true;
             this.txtNameProduct.Name = "txtNameProduct";
             this.txtNameProduct.Size = new System.Drawing.Size(202, 38);
             this.txtNameProduct.TabIndex = 1;
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Location = new System.Drawing.Point(71, 7);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(65, 34);
-            this.btnCancel.TabIndex = 0;
-            this.btnCancel.Text = "Đặt lại";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Location = new System.Drawing.Point(3, 7);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(62, 34);
-            this.btnAdd.TabIndex = 0;
-            this.btnAdd.Text = "Thêm mới";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // tpManagerCategory
             // 
@@ -467,9 +481,9 @@
             // dgvCategory
             // 
             this.dgvCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCategory.Location = new System.Drawing.Point(0, 90);
+            this.dgvCategory.Location = new System.Drawing.Point(0, 63);
             this.dgvCategory.Name = "dgvCategory";
-            this.dgvCategory.Size = new System.Drawing.Size(628, 493);
+            this.dgvCategory.Size = new System.Drawing.Size(628, 520);
             this.dgvCategory.TabIndex = 9;
             // 
             // button10
@@ -627,9 +641,6 @@
             // splitContainer4.Panel1
             // 
             this.splitContainer4.Panel1.Controls.Add(this.dgvBrand);
-            this.splitContainer4.Panel1.Controls.Add(this.button14);
-            this.splitContainer4.Panel1.Controls.Add(this.textBox11);
-            this.splitContainer4.Panel1.Controls.Add(this.button15);
             // 
             // splitContainer4.Panel2
             // 
@@ -651,31 +662,6 @@
             this.dgvBrand.Name = "dgvBrand";
             this.dgvBrand.Size = new System.Drawing.Size(530, 508);
             this.dgvBrand.TabIndex = 14;
-            // 
-            // button14
-            // 
-            this.button14.Location = new System.Drawing.Point(14, 55);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(75, 23);
-            this.button14.TabIndex = 13;
-            this.button14.Text = "Xóa";
-            this.button14.UseVisualStyleBackColor = true;
-            // 
-            // textBox11
-            // 
-            this.textBox11.Location = new System.Drawing.Point(14, 17);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(256, 20);
-            this.textBox11.TabIndex = 11;
-            // 
-            // button15
-            // 
-            this.button15.Location = new System.Drawing.Point(291, 17);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(75, 23);
-            this.button15.TabIndex = 10;
-            this.button15.Text = "Tìm kiếm";
-            this.button15.UseVisualStyleBackColor = true;
             // 
             // btnDeleteBrand
             // 
@@ -756,24 +742,21 @@
             // splitContainer5.Panel1
             // 
             this.splitContainer5.Panel1.Controls.Add(this.dgvUser);
-            this.splitContainer5.Panel1.Controls.Add(this.button23);
-            this.splitContainer5.Panel1.Controls.Add(this.textBox20);
-            this.splitContainer5.Panel1.Controls.Add(this.button24);
             // 
             // splitContainer5.Panel2
             // 
-            this.splitContainer5.Panel2.Controls.Add(this.comboBox1);
-            this.splitContainer5.Panel2.Controls.Add(this.cbAddTypeUser);
+            this.splitContainer5.Panel2.Controls.Add(this.txtAddTypeUser);
             this.splitContainer5.Panel2.Controls.Add(this.label6);
+            this.splitContainer5.Panel2.Controls.Add(this.label11);
             this.splitContainer5.Panel2.Controls.Add(this.label7);
             this.splitContainer5.Panel2.Controls.Add(this.label8);
             this.splitContainer5.Panel2.Controls.Add(this.label9);
-            this.splitContainer5.Panel2.Controls.Add(this.txtPhone);
-            this.splitContainer5.Panel2.Controls.Add(this.txtEmail);
-            this.splitContainer5.Panel2.Controls.Add(this.txtAddUser);
+            this.splitContainer5.Panel2.Controls.Add(this.txtAddPasswordUser);
+            this.splitContainer5.Panel2.Controls.Add(this.txtAddPhoneUser);
+            this.splitContainer5.Panel2.Controls.Add(this.txtAddEmailUser);
+            this.splitContainer5.Panel2.Controls.Add(this.txtAddUserFullName);
             this.splitContainer5.Panel2.Controls.Add(this.btnDeleteUser);
             this.splitContainer5.Panel2.Controls.Add(this.btnAddUser);
-            this.splitContainer5.Panel2.Controls.Add(this.btnUpdateUser);
             this.splitContainer5.Panel2.Controls.Add(this.label24);
             this.splitContainer5.Panel2.Controls.Add(this.label26);
             this.splitContainer5.Panel2.Controls.Add(this.label27);
@@ -796,52 +779,36 @@
             this.dgvUser.Size = new System.Drawing.Size(445, 508);
             this.dgvUser.TabIndex = 19;
             // 
-            // button23
+            // txtAddTypeUser
             // 
-            this.button23.Location = new System.Drawing.Point(206, 43);
-            this.button23.Name = "button23";
-            this.button23.Size = new System.Drawing.Size(75, 38);
-            this.button23.TabIndex = 18;
-            this.button23.Text = "Xóa";
-            this.button23.UseVisualStyleBackColor = true;
-            // 
-            // textBox20
-            // 
-            this.textBox20.Location = new System.Drawing.Point(25, 17);
-            this.textBox20.Name = "textBox20";
-            this.textBox20.Size = new System.Drawing.Size(256, 20);
-            this.textBox20.TabIndex = 16;
-            // 
-            // button24
-            // 
-            this.button24.Location = new System.Drawing.Point(302, 17);
-            this.button24.Name = "button24";
-            this.button24.Size = new System.Drawing.Size(75, 38);
-            this.button24.TabIndex = 15;
-            this.button24.Text = "Tìm kiếm";
-            this.button24.UseVisualStyleBackColor = true;
-            // 
-            // cbAddTypeUser
-            // 
-            this.cbAddTypeUser.FormattingEnabled = true;
-            this.cbAddTypeUser.Location = new System.Drawing.Point(255, 465);
-            this.cbAddTypeUser.Name = "cbAddTypeUser";
-            this.cbAddTypeUser.Size = new System.Drawing.Size(192, 21);
-            this.cbAddTypeUser.TabIndex = 33;
+            this.txtAddTypeUser.Location = new System.Drawing.Point(255, 485);
+            this.txtAddTypeUser.Name = "txtAddTypeUser";
+            this.txtAddTypeUser.Size = new System.Drawing.Size(192, 20);
+            this.txtAddTypeUser.TabIndex = 33;
+            this.txtAddTypeUser.Text = "member";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(123, 465);
+            this.label6.Location = new System.Drawing.Point(123, 485);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(83, 13);
             this.label6.TabIndex = 32;
             this.label6.Text = "Loại người dùng";
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(136, 404);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(52, 13);
+            this.label11.TabIndex = 31;
+            this.label11.Text = "Mật khẩu";
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(136, 422);
+            this.label7.Location = new System.Drawing.Point(136, 442);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(70, 13);
             this.label7.TabIndex = 31;
@@ -865,54 +832,54 @@
             this.label9.TabIndex = 29;
             this.label9.Text = "Tên người dùng";
             // 
-            // txtPhone
+            // txtAddPasswordUser
             // 
-            this.txtPhone.Location = new System.Drawing.Point(255, 422);
-            this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(192, 20);
-            this.txtPhone.TabIndex = 28;
+            this.txtAddPasswordUser.Location = new System.Drawing.Point(255, 404);
+            this.txtAddPasswordUser.Name = "txtAddPasswordUser";
+            this.txtAddPasswordUser.Size = new System.Drawing.Size(192, 20);
+            this.txtAddPasswordUser.TabIndex = 28;
             // 
-            // txtEmail
+            // txtAddPhoneUser
             // 
-            this.txtEmail.Location = new System.Drawing.Point(255, 359);
-            this.txtEmail.Multiline = true;
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(192, 23);
-            this.txtEmail.TabIndex = 27;
+            this.txtAddPhoneUser.Location = new System.Drawing.Point(255, 442);
+            this.txtAddPhoneUser.Name = "txtAddPhoneUser";
+            this.txtAddPhoneUser.Size = new System.Drawing.Size(192, 20);
+            this.txtAddPhoneUser.TabIndex = 28;
             // 
-            // txtAddUser
+            // txtAddEmailUser
             // 
-            this.txtAddUser.Location = new System.Drawing.Point(255, 321);
-            this.txtAddUser.Name = "txtAddUser";
-            this.txtAddUser.Size = new System.Drawing.Size(192, 20);
-            this.txtAddUser.TabIndex = 26;
+            this.txtAddEmailUser.Location = new System.Drawing.Point(255, 359);
+            this.txtAddEmailUser.Multiline = true;
+            this.txtAddEmailUser.Name = "txtAddEmailUser";
+            this.txtAddEmailUser.Size = new System.Drawing.Size(192, 23);
+            this.txtAddEmailUser.TabIndex = 27;
+            // 
+            // txtAddUserFullName
+            // 
+            this.txtAddUserFullName.Location = new System.Drawing.Point(255, 321);
+            this.txtAddUserFullName.Name = "txtAddUserFullName";
+            this.txtAddUserFullName.Size = new System.Drawing.Size(192, 20);
+            this.txtAddUserFullName.TabIndex = 26;
             // 
             // btnDeleteUser
             // 
-            this.btnDeleteUser.Location = new System.Drawing.Point(348, 251);
+            this.btnDeleteUser.Location = new System.Drawing.Point(307, 251);
             this.btnDeleteUser.Name = "btnDeleteUser";
             this.btnDeleteUser.Size = new System.Drawing.Size(99, 26);
             this.btnDeleteUser.TabIndex = 15;
             this.btnDeleteUser.Text = "Xóa người dùng";
             this.btnDeleteUser.UseVisualStyleBackColor = true;
+            this.btnDeleteUser.Click += new System.EventHandler(this.btnDeleteUser_Click);
             // 
             // btnAddUser
             // 
-            this.btnAddUser.Location = new System.Drawing.Point(255, 513);
+            this.btnAddUser.Location = new System.Drawing.Point(255, 533);
             this.btnAddUser.Name = "btnAddUser";
             this.btnAddUser.Size = new System.Drawing.Size(75, 26);
             this.btnAddUser.TabIndex = 15;
             this.btnAddUser.Text = "Thêm";
             this.btnAddUser.UseVisualStyleBackColor = true;
-            // 
-            // btnUpdateUser
-            // 
-            this.btnUpdateUser.Location = new System.Drawing.Point(255, 251);
-            this.btnUpdateUser.Name = "btnUpdateUser";
-            this.btnUpdateUser.Size = new System.Drawing.Size(75, 26);
-            this.btnUpdateUser.TabIndex = 15;
-            this.btnUpdateUser.Text = "Cập nhật Người dùng";
-            this.btnUpdateUser.UseVisualStyleBackColor = true;
+            this.btnAddUser.Click += new System.EventHandler(this.btnAddUser_Click);
             // 
             // label24
             // 
@@ -949,6 +916,13 @@
             this.label5.Size = new System.Drawing.Size(74, 13);
             this.label5.TabIndex = 15;
             this.label5.Text = "ID người dùng";
+            // 
+            // txtEditTypeUser
+            // 
+            this.txtEditTypeUser.Location = new System.Drawing.Point(255, 210);
+            this.txtEditTypeUser.Name = "txtEditTypeUser";
+            this.txtEditTypeUser.Size = new System.Drawing.Size(192, 20);
+            this.txtEditTypeUser.TabIndex = 13;
             // 
             // label28
             // 
@@ -992,10 +966,11 @@
             // 
             // tpOrder
             // 
+            this.tpOrder.Controls.Add(this.lblOrderId);
+            this.tpOrder.Controls.Add(this.label10);
+            this.tpOrder.Controls.Add(this.listBox1);
             this.tpOrder.Controls.Add(this.dgvOrder);
-            this.tpOrder.Controls.Add(this.button4);
             this.tpOrder.Controls.Add(this.button5);
-            this.tpOrder.Controls.Add(this.button6);
             this.tpOrder.Controls.Add(this.textBox5);
             this.tpOrder.Controls.Add(this.button7);
             this.tpOrder.Location = new System.Drawing.Point(4, 22);
@@ -1006,6 +981,33 @@
             this.tpOrder.Text = "Quản lý đơn hàng";
             this.tpOrder.UseVisualStyleBackColor = true;
             // 
+            // lblOrderId
+            // 
+            this.lblOrderId.AutoSize = true;
+            this.lblOrderId.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOrderId.Location = new System.Drawing.Point(767, 69);
+            this.lblOrderId.Name = "lblOrderId";
+            this.lblOrderId.Size = new System.Drawing.Size(23, 13);
+            this.lblOrderId.TabIndex = 25;
+            this.lblOrderId.Text = "....";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(665, 69);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(77, 13);
+            this.label10.TabIndex = 24;
+            this.label10.Text = "Mã đơn hàng :";
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(665, 100);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(342, 472);
+            this.listBox1.TabIndex = 23;
+            // 
             // dgvOrder
             // 
             this.dgvOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -1014,32 +1016,14 @@
             this.dgvOrder.Size = new System.Drawing.Size(562, 488);
             this.dgvOrder.TabIndex = 22;
             // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(267, 60);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(91, 23);
-            this.button4.TabIndex = 18;
-            this.button4.Text = "Xóa vĩnh viễn";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(171, 60);
+            this.button5.Location = new System.Drawing.Point(665, 22);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(75, 23);
             this.button5.TabIndex = 19;
             this.button5.Text = "Xóa";
             this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(66, 60);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 20;
-            this.button6.Text = "Sửa";
-            this.button6.UseVisualStyleBackColor = true;
             // 
             // textBox5
             // 
@@ -1057,6 +1041,207 @@
             this.button7.Text = "Tìm kiếm";
             this.button7.UseVisualStyleBackColor = true;
             // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.splitContainer2);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.tabPage1.Size = new System.Drawing.Size(1038, 643);
+            this.tabPage1.TabIndex = 5;
+            this.tabPage1.Text = "Thêm sản phẩm mới";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // splitContainer2
+            // 
+            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer2.Location = new System.Drawing.Point(3, 3);
+            this.splitContainer2.Name = "splitContainer2";
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.Controls.Add(this.dgvAddProduct);
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.btnAddProduct);
+            this.splitContainer2.Panel2.Controls.Add(this.lblAddPathImage);
+            this.splitContainer2.Panel2.Controls.Add(this.cbAddCategories);
+            this.splitContainer2.Panel2.Controls.Add(this.btnAddImageProduct);
+            this.splitContainer2.Panel2.Controls.Add(this.pbAddImageProduct);
+            this.splitContainer2.Panel2.Controls.Add(this.cbbAddBrand);
+            this.splitContainer2.Panel2.Controls.Add(this.label14);
+            this.splitContainer2.Panel2.Controls.Add(this.label15);
+            this.splitContainer2.Panel2.Controls.Add(this.label16);
+            this.splitContainer2.Panel2.Controls.Add(this.label17);
+            this.splitContainer2.Panel2.Controls.Add(this.label18);
+            this.splitContainer2.Panel2.Controls.Add(this.label19);
+            this.splitContainer2.Panel2.Controls.Add(this.label22);
+            this.splitContainer2.Panel2.Controls.Add(this.txtAddQuality);
+            this.splitContainer2.Panel2.Controls.Add(this.txtAddPrice);
+            this.splitContainer2.Panel2.Controls.Add(this.txtAddDescription);
+            this.splitContainer2.Panel2.Controls.Add(this.txtAddProductName);
+            this.splitContainer2.Size = new System.Drawing.Size(1032, 637);
+            this.splitContainer2.SplitterDistance = 677;
+            this.splitContainer2.TabIndex = 0;
+            // 
+            // dgvAddProduct
+            // 
+            this.dgvAddProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAddProduct.Location = new System.Drawing.Point(3, 85);
+            this.dgvAddProduct.Name = "dgvAddProduct";
+            this.dgvAddProduct.Size = new System.Drawing.Size(638, 526);
+            this.dgvAddProduct.TabIndex = 6;
+            // 
+            // btnAddProduct
+            // 
+            this.btnAddProduct.Location = new System.Drawing.Point(144, 24);
+            this.btnAddProduct.Name = "btnAddProduct";
+            this.btnAddProduct.Size = new System.Drawing.Size(93, 34);
+            this.btnAddProduct.TabIndex = 30;
+            this.btnAddProduct.Text = "Thêm";
+            this.btnAddProduct.UseVisualStyleBackColor = true;
+            this.btnAddProduct.Click += new System.EventHandler(this.btnAddProduct_Click);
+            // 
+            // lblAddPathImage
+            // 
+            this.lblAddPathImage.AutoSize = true;
+            this.lblAddPathImage.Location = new System.Drawing.Point(134, 434);
+            this.lblAddPathImage.Name = "lblAddPathImage";
+            this.lblAddPathImage.Size = new System.Drawing.Size(81, 13);
+            this.lblAddPathImage.TabIndex = 29;
+            this.lblAddPathImage.Text = "Đường dẫn ảnh";
+            // 
+            // cbAddCategories
+            // 
+            this.cbAddCategories.FormattingEnabled = true;
+            this.cbAddCategories.Location = new System.Drawing.Point(137, 255);
+            this.cbAddCategories.Name = "cbAddCategories";
+            this.cbAddCategories.Size = new System.Drawing.Size(151, 21);
+            this.cbAddCategories.TabIndex = 28;
+            // 
+            // btnAddImageProduct
+            // 
+            this.btnAddImageProduct.Location = new System.Drawing.Point(10, 432);
+            this.btnAddImageProduct.Name = "btnAddImageProduct";
+            this.btnAddImageProduct.Size = new System.Drawing.Size(105, 23);
+            this.btnAddImageProduct.TabIndex = 27;
+            this.btnAddImageProduct.Text = "Tải ảnh lên";
+            this.btnAddImageProduct.UseVisualStyleBackColor = true;
+            // 
+            // pbAddImageProduct
+            // 
+            this.pbAddImageProduct.Location = new System.Drawing.Point(132, 498);
+            this.pbAddImageProduct.Name = "pbAddImageProduct";
+            this.pbAddImageProduct.Size = new System.Drawing.Size(166, 113);
+            this.pbAddImageProduct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbAddImageProduct.TabIndex = 26;
+            this.pbAddImageProduct.TabStop = false;
+            // 
+            // cbbAddBrand
+            // 
+            this.cbbAddBrand.FormattingEnabled = true;
+            this.cbbAddBrand.Location = new System.Drawing.Point(137, 380);
+            this.cbbAddBrand.Name = "cbbAddBrand";
+            this.cbbAddBrand.Size = new System.Drawing.Size(151, 21);
+            this.cbbAddBrand.TabIndex = 25;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(37, 383);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(67, 13);
+            this.label14.TabIndex = 23;
+            this.label14.Text = "Thương hiệu";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(47, 434);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(26, 13);
+            this.label15.TabIndex = 22;
+            this.label15.Text = "Ảnh";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(53, 298);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(23, 13);
+            this.label16.TabIndex = 21;
+            this.label16.Text = "Giá";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(41, 339);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(49, 13);
+            this.label17.TabIndex = 24;
+            this.label17.Text = "Số lượng";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(15, 255);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(105, 13);
+            this.label18.TabIndex = 20;
+            this.label18.Text = "Danh mục sản phẩm";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(3, 129);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(101, 13);
+            this.label19.TabIndex = 19;
+            this.label19.Text = "Thông tin sản phẩm";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(1, 85);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(75, 13);
+            this.label22.TabIndex = 17;
+            this.label22.Text = "Tên sản phẩm";
+            // 
+            // txtAddQuality
+            // 
+            this.txtAddQuality.Location = new System.Drawing.Point(137, 339);
+            this.txtAddQuality.Name = "txtAddQuality";
+            this.txtAddQuality.Size = new System.Drawing.Size(130, 20);
+            this.txtAddQuality.TabIndex = 14;
+            this.txtAddQuality.Text = "1";
+            // 
+            // txtAddPrice
+            // 
+            this.txtAddPrice.Location = new System.Drawing.Point(137, 298);
+            this.txtAddPrice.Name = "txtAddPrice";
+            this.txtAddPrice.Size = new System.Drawing.Size(130, 20);
+            this.txtAddPrice.TabIndex = 13;
+            this.txtAddPrice.Text = "1";
+            // 
+            // txtAddDescription
+            // 
+            this.txtAddDescription.Location = new System.Drawing.Point(132, 129);
+            this.txtAddDescription.Multiline = true;
+            this.txtAddDescription.Name = "txtAddDescription";
+            this.txtAddDescription.Size = new System.Drawing.Size(202, 91);
+            this.txtAddDescription.TabIndex = 12;
+            // 
+            // txtAddProductName
+            // 
+            this.txtAddProductName.Location = new System.Drawing.Point(132, 85);
+            this.txtAddProductName.Multiline = true;
+            this.txtAddProductName.Name = "txtAddProductName";
+            this.txtAddProductName.Size = new System.Drawing.Size(202, 38);
+            this.txtAddProductName.TabIndex = 11;
+            // 
             // shopDataSet
             // 
             this.shopDataSet.DataSetName = "ShopDataSet";
@@ -1071,26 +1256,11 @@
             // 
             this.rulesTableAdapter.ClearBeforeFill = true;
             // 
-            // txtEditTypeUser
-            // 
-            this.txtEditTypeUser.Location = new System.Drawing.Point(255, 210);
-            this.txtEditTypeUser.Name = "txtEditTypeUser";
-            this.txtEditTypeUser.Size = new System.Drawing.Size(192, 20);
-            this.txtEditTypeUser.TabIndex = 13;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(255, 513);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(192, 21);
-            this.comboBox1.TabIndex = 33;
-            // 
             // fManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1047, 630);
+            this.ClientSize = new System.Drawing.Size(1047, 660);
             this.Controls.Add(this.tcManager);
             this.Name = "fManager";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1118,7 +1288,6 @@
             this.gbAddCategory.PerformLayout();
             this.tpManagerBrand.ResumeLayout(false);
             this.splitContainer4.Panel1.ResumeLayout(false);
-            this.splitContainer4.Panel1.PerformLayout();
             this.splitContainer4.Panel2.ResumeLayout(false);
             this.splitContainer4.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).EndInit();
@@ -1126,7 +1295,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvBrand)).EndInit();
             this.tpManagerUser.ResumeLayout(false);
             this.splitContainer5.Panel1.ResumeLayout(false);
-            this.splitContainer5.Panel1.PerformLayout();
             this.splitContainer5.Panel2.ResumeLayout(false);
             this.splitContainer5.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).EndInit();
@@ -1135,6 +1303,14 @@
             this.tpOrder.ResumeLayout(false);
             this.tpOrder.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrder)).EndInit();
+            this.tabPage1.ResumeLayout(false);
+            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel2.ResumeLayout(false);
+            this.splitContainer2.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
+            this.splitContainer2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAddProduct)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAddImageProduct)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.shopDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rulesBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -1148,7 +1324,6 @@
         private System.Windows.Forms.TabPage tpManagerProduct;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.DataGridView dgvListProduct;
-        private System.Windows.Forms.Button btnPermanentlyDeleted;
         private System.Windows.Forms.Button btnEmpty;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button btnSearchProduct;
@@ -1167,8 +1342,6 @@
         private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.TextBox txtNameProduct;
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.TabPage tpManagerCategory;
         private System.Windows.Forms.TabPage tpManagerBrand;
         private System.Windows.Forms.TabPage tpManagerUser;
@@ -1181,14 +1354,8 @@
         private System.Windows.Forms.TextBox txtCategoryName;
         private System.Windows.Forms.SplitContainer splitContainer4;
         private System.Windows.Forms.DataGridView dgvBrand;
-        private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.Button button15;
         private System.Windows.Forms.SplitContainer splitContainer5;
         private System.Windows.Forms.DataGridView dgvUser;
-        private System.Windows.Forms.Button button23;
-        private System.Windows.Forms.TextBox textBox20;
-        private System.Windows.Forms.Button button24;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox txtAddBrandName;
         private System.Windows.Forms.Label lblImageFileName;
@@ -1202,12 +1369,9 @@
         private System.Windows.Forms.TextBox txtEditPhone;
         private System.Windows.Forms.TextBox txtEditEmailUser;
         private System.Windows.Forms.TextBox txtEditFullName;
-        private System.Windows.Forms.Button btnUpdateUser;
         private System.Windows.Forms.TabPage tpOrder;
         private System.Windows.Forms.DataGridView dgvOrder;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Label label3;
@@ -1225,20 +1389,46 @@
         private System.Windows.Forms.TextBox txtNameBrandEdit;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtEditIdUser;
-        private System.Windows.Forms.ComboBox cbAddTypeUser;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtPhone;
-        private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.TextBox txtAddUser;
+        private System.Windows.Forms.TextBox txtAddPhoneUser;
+        private System.Windows.Forms.TextBox txtAddEmailUser;
+        private System.Windows.Forms.TextBox txtAddUserFullName;
         private System.Windows.Forms.Button btnDeleteUser;
         private System.Windows.Forms.Button btnAddUser;
         private ShopDataSet shopDataSet;
         private System.Windows.Forms.BindingSource rulesBindingSource;
         private ShopDataSetTableAdapters.rulesTableAdapter rulesTableAdapter;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TextBox txtEditTypeUser;
+        private System.Windows.Forms.TextBox txtAddTypeUser;
+        private System.Windows.Forms.Label lblOrderId;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtAddPasswordUser;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txtIdProduct;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.SplitContainer splitContainer2;
+        private System.Windows.Forms.DataGridView dgvAddProduct;
+        private System.Windows.Forms.Button btnAddProduct;
+        private System.Windows.Forms.Label lblAddPathImage;
+        private System.Windows.Forms.ComboBox cbAddCategories;
+        private System.Windows.Forms.Button btnAddImageProduct;
+        private System.Windows.Forms.PictureBox pbAddImageProduct;
+        private System.Windows.Forms.ComboBox cbbAddBrand;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.TextBox txtAddQuality;
+        private System.Windows.Forms.TextBox txtAddPrice;
+        private System.Windows.Forms.TextBox txtAddDescription;
+        private System.Windows.Forms.TextBox txtAddProductName;
     }
 }

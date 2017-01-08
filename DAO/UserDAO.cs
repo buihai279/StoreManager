@@ -44,5 +44,21 @@ namespace StoreManager
 
             return dt;
         }
+        public bool AddUser(string fullname, string email, string password, string phonenumber)
+        {
+            query = string.Format(@"EXEC spRegister @fullname='{0}',@email='{1}', @password='{2}', @phonenumber='{3}'", fullname, email, password, phonenumber);
+
+            int result = DataProvider.ExcuteNonQuery(query);
+
+            return result > 0;
+        }
+        public bool DeleteUser(int userid)
+        {
+            query = string.Format(@"EXEC spDeleteUser @Userid={0};", userid);
+
+            int result = DataProvider.ExcuteNonQuery(query);
+
+            return result > 0;
+        }
     }
 }

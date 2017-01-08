@@ -8,7 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-
 namespace StoreManager
 {
     public partial class fManager : Form
@@ -22,18 +21,18 @@ namespace StoreManager
         public fManager()
         {
             InitializeComponent();
+            Load();
+        }
+        #region method
+        void Load() 
+        {
             dgvListProduct.DataSource = ProductList;
+            dgvAddProduct.DataSource = ProductList;
             dgvCategory.DataSource = CategoryList;
             dgvBrand.DataSource = BrandList;
             dgvUser.DataSource = UserList;
             dgvOrder.DataSource = OrderList;
-            Load();
-           
-        }
-        #region method
 
-        void Load() 
-        {
             LoadCategory();
             LoadUserList();
             LoadBrandList();
@@ -47,6 +46,7 @@ namespace StoreManager
         }
         void AddProductBinding()
         {
+            txtIdProduct.DataBindings.Add(new Binding("Text", dgvListProduct.DataSource, "ProductId"));
             txtNameProduct.DataBindings.Add(new Binding("Text", dgvListProduct.DataSource, "ProductName"));
             txtDescription.DataBindings.Add(new Binding("Text", dgvListProduct.DataSource, "ProductDescription"));
             txtPrice.DataBindings.Add(new Binding("Text", dgvListProduct.DataSource, "Price"));
@@ -80,6 +80,11 @@ namespace StoreManager
             cbCategory.DisplayMember = "CategoryName";
             cbCategory.ValueMember = "CategoryId";
             cbCategory.DataSource = dt;
+            cbAddCategories.DisplayMember = "CategoryName";
+            cbAddCategories.ValueMember = "CategoryId";
+            cbAddCategories.DataSource = dt;
+            cbCategory.SelectedIndex = 1;
+            cbAddCategories.SelectedIndex = 1;
         }
         void LoadUserList()
         {
@@ -94,7 +99,12 @@ namespace StoreManager
             BrandList.DataSource = dt;
             cbBand.DisplayMember = "BrandName";
             cbBand.ValueMember = "BrandId";
+            cbbAddBrand.DisplayMember = "BrandName";
+            cbbAddBrand.ValueMember = "BrandId";
+            cbbAddBrand.DataSource = dt;
             cbBand.DataSource = dt;
+            cbBand.SelectedIndex = 1;
+            cbbAddBrand.SelectedIndex = 1;
         }
         void LoadProductList()
         {
@@ -106,7 +116,6 @@ namespace StoreManager
             OrderDAO ord = new OrderDAO();
             OrderList.DataSource = ord.GetAllOrder();
         }
-
         #endregion
 
 
@@ -116,23 +125,14 @@ namespace StoreManager
             OpenFileDialog ofd = new OpenFileDialog();
             ofdImage.ShowDialog();
         }
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            string name=txtNameProduct.ToString();
-            string description=txtDescription.ToString();
-            string img = pbImage.ToString();
-            string  brandname=cbBand.ToString();
-            float price=float.Parse(txtPrice.ToString());
-            int quality=int.Parse(txtQuantity.ToString());
-            int cateid=int.Parse(cbCategory.ToString());
-        }
-
         private void lblImageFileName_TextChanged(object sender, EventArgs e)
         {
-            Image image = Image.FromFile( System.IO.Directory.GetCurrentDirectory()+@"\product-images\" + lblImageFileName.Text);
-            pbImage.Image = image;
+            if (lblImageFileName.Text != null && lblImageFileName.Text != "")
+            {
+                Image image = Image.FromFile(System.IO.Directory.GetCurrentDirectory() + @"\product-images\" + lblImageFileName.Text);
+                pbImage.Image = image;
+            }
         }
-
         private void btnAddCategory_Click(object sender, EventArgs e)
         {
             CategoryDAO cate = new CategoryDAO();
@@ -144,7 +144,6 @@ namespace StoreManager
             else
                 MessageBox.Show("Có lỗi xảy ra");
         }
-
         private void btnDeleteCategory_Click(object sender, EventArgs e)
         {
             CategoryDAO cate = new CategoryDAO();
@@ -157,8 +156,6 @@ namespace StoreManager
                 MessageBox.Show("Có lỗi xảy ra");
 
         }
-        #endregion
-
         private void btnUpdateCategory_Click(object sender, EventArgs e)
         {
             CategoryDAO cate = new CategoryDAO();
@@ -170,13 +167,102 @@ namespace StoreManager
             else
                 MessageBox.Show("Có lỗi xảy ra");
         }
-
-        private void fManager_Load(object sender, EventArgs e)
+        #endregion
+        #region method for user
+        private void btnAddUser_Click(object sender, EventArgs e)
         {
+            string fullname=txtAddUserFullName.Text;
+            string email=txtAddEmailUser.Text;
+            string phone=txtAddPhoneUser.Text;
+            string password=txtAddPhoneUser.Text;
+            UserDAO us = new UserDAO();
+            
+            if (us.AddUser(fullname, email, password, phone))
+            {
+                MessageBox.Show("Thêm thành công thành công!");
+                LoadUserList();
+            }
+            else
+                MessageBox.Show("Có lỗi xảy ra");
+        }
+        private void btnDeleteUser_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(txtEditIdUser.Text);
+            UserDAO us = new UserDAO();
+            if (us.DeleteUser(id))
+            {
+                MessageBox.Show("Xóa thành công thành công!");
+                LoadUserList();
+            }
+            else
+                MessageBox.Show("Có lỗi xảy ra");
+        }
+        #endregion
+
+        private void btnSearchProduct_Click(object sender, EventArgs e)
+        {
+            string text = txtSearch.Text;
+            ProductDAO pro = new ProductDAO();
+            dt=pro.SearchProduct(text);
+            if(dt.Rows.Count>0){
+                MessageBox.Show("Tìm kiếm thành công!");
+                dgvListProduct.DataSource = dt;
+            }
+            else
+                MessageBox.Show("Có lỗi xảy ra");
+        }
+
+        private void btnEmpty_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(txtIdProduct.Text);
+            ProductDAO pro = new ProductDAO();
+            if (pro.DeleteProduct(id))
+            {
+                MessageBox.Show("Xóa thành công!");
+                LoadProductList();
+            }
+            else
+                MessageBox.Show("Có lỗi xảy ra");
+        }
+
+        private void btnAddProduct_Click(object sender, EventArgs e)
+        {
+            string name = txtAddProductName.Text;
+            string des = txtAddDescription.Text;
+            string img = lblImage.Text;
+            int brand = cbbAddBrand.SelectedIndex;
+            int cate = cbAddCategories.SelectedIndex;
+            int price = int.Parse(txtAddPrice.Text);
+            int qlt = int.Parse(txtAddQuality.Text);
+            ProductDAO pro = new ProductDAO();
+            if (pro.AddProduct(name, des, img, cate, qlt, price, brand))
+            {
+                MessageBox.Show("Thêm thành công!");
+                dgvAddProduct.DataSource = pro.GetAllProduct();
+            }
+            else
+                MessageBox.Show("Có lỗi xảy ra");
 
         }
 
-
-
+        private void btnUpdateProduct_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(txtIdProduct.Text);
+            string name = txtNameProduct.Text;
+            string des = txtDescription.Text;
+            string img = lblImageFileName.Text;
+            int brand = cbBand.SelectedIndex;
+            int cate = cbCategory.SelectedIndex;
+            int price = int.Parse(txtPrice.Text);
+            int qlt = int.Parse(txtQuantity.Text);
+            ProductDAO pro = new ProductDAO();
+            if (pro.EditProduct(id,name, des, img, cate, qlt, price, brand))
+            {
+                MessageBox.Show("Cập nhật thành công!");
+                LoadProductList();
+            }
+            else
+                MessageBox.Show("Có lỗi xảy ra");
+        }
     }
 }

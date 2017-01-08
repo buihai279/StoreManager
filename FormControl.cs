@@ -32,7 +32,8 @@ namespace StoreManager
             this.Show();
         }
 
-        private void tmsi_sell_Click(object sender, EventArgs e)
+
+        private void btnSell_Click(object sender, EventArgs e)
         {
             fSell fSell = new fSell();
             this.Hide();
@@ -40,8 +41,9 @@ namespace StoreManager
             this.Show();
         }
 
-        private void tsmi_ManagerProduct_Click(object sender, EventArgs e)
+        private void btnManager_Click(object sender, EventArgs e)
         {
+
             fManager fmt = new fManager();
             this.Hide();
             fmt.ShowDialog();

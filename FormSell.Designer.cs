@@ -52,12 +52,12 @@
             // 
             this.txtProductId.Location = new System.Drawing.Point(0, 3);
             this.txtProductId.Name = "txtProductId";
-            this.txtProductId.Size = new System.Drawing.Size(221, 20);
+            this.txtProductId.Size = new System.Drawing.Size(306, 20);
             this.txtProductId.TabIndex = 0;
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(244, 3);
+            this.btnSearch.Location = new System.Drawing.Point(326, 3);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 23);
             this.btnSearch.TabIndex = 1;
