@@ -52,5 +52,6 @@ namespace StoreManager
 
             return result > 0;
         }
+
     }
 }

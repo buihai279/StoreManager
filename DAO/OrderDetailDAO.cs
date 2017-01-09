@@ -12,5 +12,13 @@ namespace StoreManager
     {
         private DataTable dt;
         private string query = "";
+        public DataTable GetOrderDetail(int id)
+        {
+            query = string.Format("EXEC spViewOrderDetail @OrderID={0}",id);
+
+            dt = DataProvider.ExcuteQuery(query);
+
+            return dt;
+        }
     }
 }

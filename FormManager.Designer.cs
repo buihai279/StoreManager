@@ -111,11 +111,8 @@
             this.tpOrder = new System.Windows.Forms.TabPage();
             this.lblOrderId = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.dgvOrder = new System.Windows.Forms.DataGridView();
             this.button5 = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.button7 = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.dgvAddProduct = new System.Windows.Forms.DataGridView();
@@ -140,6 +137,7 @@
             this.shopDataSet = new StoreManager.ShopDataSet();
             this.rulesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rulesTableAdapter = new StoreManager.ShopDataSetTableAdapters.rulesTableAdapter();
+            this.dgvOrderDetail = new System.Windows.Forms.DataGridView();
             this.tcManager.SuspendLayout();
             this.tpManagerProduct.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -179,6 +177,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbAddImageProduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.shopDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rulesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOrderDetail)).BeginInit();
             this.SuspendLayout();
             // 
             // ofdImage
@@ -966,13 +965,11 @@
             // 
             // tpOrder
             // 
+            this.tpOrder.Controls.Add(this.dgvOrderDetail);
             this.tpOrder.Controls.Add(this.lblOrderId);
             this.tpOrder.Controls.Add(this.label10);
-            this.tpOrder.Controls.Add(this.listBox1);
             this.tpOrder.Controls.Add(this.dgvOrder);
             this.tpOrder.Controls.Add(this.button5);
-            this.tpOrder.Controls.Add(this.textBox5);
-            this.tpOrder.Controls.Add(this.button7);
             this.tpOrder.Location = new System.Drawing.Point(4, 22);
             this.tpOrder.Name = "tpOrder";
             this.tpOrder.Padding = new System.Windows.Forms.Padding(3);
@@ -990,6 +987,7 @@
             this.lblOrderId.Size = new System.Drawing.Size(23, 13);
             this.lblOrderId.TabIndex = 25;
             this.lblOrderId.Text = "....";
+            this.lblOrderId.TextChanged += new System.EventHandler(this.lblOrderId_TextChanged);
             // 
             // label10
             // 
@@ -1000,20 +998,12 @@
             this.label10.TabIndex = 24;
             this.label10.Text = "Mã đơn hàng :";
             // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(665, 100);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(342, 472);
-            this.listBox1.TabIndex = 23;
-            // 
             // dgvOrder
             // 
             this.dgvOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOrder.Location = new System.Drawing.Point(30, 89);
             this.dgvOrder.Name = "dgvOrder";
-            this.dgvOrder.Size = new System.Drawing.Size(562, 488);
+            this.dgvOrder.Size = new System.Drawing.Size(535, 488);
             this.dgvOrder.TabIndex = 22;
             // 
             // button5
@@ -1024,22 +1014,6 @@
             this.button5.TabIndex = 19;
             this.button5.Text = "Xóa";
             this.button5.UseVisualStyleBackColor = true;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(66, 22);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(256, 20);
-            this.textBox5.TabIndex = 15;
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(343, 22);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 23);
-            this.button7.TabIndex = 9;
-            this.button7.Text = "Tìm kiếm";
-            this.button7.UseVisualStyleBackColor = true;
             // 
             // tabPage1
             // 
@@ -1256,6 +1230,14 @@
             // 
             this.rulesTableAdapter.ClearBeforeFill = true;
             // 
+            // dgvOrderDetail
+            // 
+            this.dgvOrderDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOrderDetail.Location = new System.Drawing.Point(591, 89);
+            this.dgvOrderDetail.Name = "dgvOrderDetail";
+            this.dgvOrderDetail.Size = new System.Drawing.Size(418, 302);
+            this.dgvOrderDetail.TabIndex = 26;
+            // 
             // fManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1313,6 +1295,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbAddImageProduct)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.shopDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rulesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOrderDetail)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1372,8 +1355,6 @@
         private System.Windows.Forms.TabPage tpOrder;
         private System.Windows.Forms.DataGridView dgvOrder;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -1405,7 +1386,6 @@
         private System.Windows.Forms.TextBox txtAddTypeUser;
         private System.Windows.Forms.Label lblOrderId;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtAddPasswordUser;
         private System.Windows.Forms.Label label12;
@@ -1430,5 +1410,6 @@
         private System.Windows.Forms.TextBox txtAddPrice;
         private System.Windows.Forms.TextBox txtAddDescription;
         private System.Windows.Forms.TextBox txtAddProductName;
+        private System.Windows.Forms.DataGridView dgvOrderDetail;
     }
 }

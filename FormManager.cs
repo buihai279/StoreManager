@@ -43,6 +43,7 @@ namespace StoreManager
             AddCategoryBinding();
             AddBrandBinding();
             AddUserBinding();
+            AddOrderBinding();
         }
         void AddProductBinding()
         {
@@ -63,6 +64,10 @@ namespace StoreManager
         void AddBrandBinding()
         {
             txtNameBrandEdit.DataBindings.Add(new Binding("Text", dgvBrand.DataSource, "BrandName"));
+        }
+        void AddOrderBinding()
+        {
+            lblOrderId.DataBindings.Add(new Binding("Text", dgvOrder.DataSource, "OrderId"));
         }
         void AddUserBinding()
         {
@@ -198,7 +203,7 @@ namespace StoreManager
                 MessageBox.Show("Có lỗi xảy ra");
         }
         #endregion
-
+        #region
         private void btnSearchProduct_Click(object sender, EventArgs e)
         {
             string text = txtSearch.Text;
@@ -264,5 +269,22 @@ namespace StoreManager
             else
                 MessageBox.Show("Có lỗi xảy ra");
         }
+
+        #endregion
+
+        private void lblOrderId_TextChanged(object sender, EventArgs e)
+        {
+            int orterid=int.Parse(lblOrderId.Text);
+            OrderDetailDAO odd = new OrderDetailDAO();
+            dt = odd.GetOrderDetail(orterid);
+            
+            if (dt.Rows.Count>0)
+            {
+                dgvOrderDetail.DataSource = dt; return;
+            }
+            else
+                MessageBox.Show("Có lỗi xảy ra");
+        }
+
     }
 }
